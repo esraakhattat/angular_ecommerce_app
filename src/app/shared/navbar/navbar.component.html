@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="navbar-brand" aria-current="page" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact:true}">E-Commerce</a>
+                </li>
+            </ul>
+            <a class="navbar-link me-4 text-dark" aria-current="page" routerLink="cart"><i class="fa-solid fa-cart-shopping" routerLinkActive="active" matBadge={{counter}} [matBadgeHidden]="hidden" matBadgeColor="warn"></i></a>
+            <a routerLink="auth/login" class="btn btn-light" routerLinkActive="active-btn" >Log In</a>
+            <a routerLink="auth/sign-up" class="btn btn-dark ms-3" routerLinkActive="active-btn" >Sign Up</a>
+        </div>
+        </div>
+    </div>
+</nav>

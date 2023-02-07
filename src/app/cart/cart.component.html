@@ -1,0 +1,35 @@
+<div class="row justify-content-between">
+    <div class="cart col-8 d-flex flex-column p-3" >
+        <div class="empty-cart" *ngIf="emptyCart">
+        <img src="../../assets/img/empty-cart.svg" class="img-fluid">
+        <p>Your Cart is Empty</p></div>
+        <div class="cart-item text-start mb-5" *ngFor="let item of cartItems">
+            <img [src]="item.image" class="image-fluid">
+            <div class="cart-item-details">
+                <p class="h5">{{item.title}}</p>
+                <p class="desc">{{item.description}}</p>
+                <p class="price">{{item.price}}<span class="egp"> EGP</span></p>
+            </div>
+            <div class="w-25 row m-auto">
+                    <a class="col-3 btn btn-success" (click)="increaseQuantity(item)">+</a>
+                    <p class="col-3">{{item.quantity}}</p>
+                    <a class="btn btn-danger col-3" (click)="decreaseQuantity(item)">-</a>
+                    <a class="btn text-dark col-3 remove" (click)="removeItem(item)">X</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-3 d-flex flex-column w-25">
+        <div class="checkout">
+            <p class="text-start m-3">Quantity: {{totalQuantity}}<span id="total-quantity"></span></p>
+            <p class="text-start m-3">Subtotal: {{subTotal}} <span id="sub-total"></span></p>
+            <button class="btn btn-dark w-75 m-3"(click)="checkOut()">Check Out</button>
+        </div>
+    </div>
+</div>
+<div class="alert alert-info" role="alert" *ngIf="checkoutToggle">
+    Thank you for Purchasing 💖<a routerLink="../" class="alert-link">Go to home page and continue shopping</a>
+</div>
+<div class="alert alert-info" role="alert" *ngIf="alreadyToggle">
+    Cart is empty nothing to checkout 😢<a routerLink="../" class="alert-link"> Go to home page</a>
+</div>

@@ -1,0 +1,37 @@
+.form-control:focus{
+    border-color: orange;
+        box-shadow: 0 0 0 0.2rem rgba(255, 166, 0, 0.25);
+}
+.is-valid{
+    border:1px solid orange;
+}
+
+.active-btn{
+    border-radius: 5px;
+    padding: 8px 25px;
+    text-decoration: none;
+    width:100%;
+}
+.submit{
+    background-color: orange;
+    color:black;
+}
+.log-in-section {
+    border: #001e0033 1px solid;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 1px 1px 5px rgba(187, 187, 187, 0.356);
+    /* margin-top: 100px; */
+    margin:100px auto;
+}
+.or {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+.or span {
+    background: #fff;    
+    padding: 0 10px;
+}

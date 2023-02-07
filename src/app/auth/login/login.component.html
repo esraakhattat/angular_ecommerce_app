@@ -1,0 +1,29 @@
+<div class="log-in-section col-lg-4 col-md-12 col-sm-12">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required type="email" class="form-control"
+                [ngClass]="email.touched && email.invalid?'is-invalid':(email.valid? 'is-valid':'form-control')"
+                id="email" aria-describedby="emailHelp" name="email" ngModel #email="ngModel" />
+            <div id="emailHelpBlock" class="form-text" *ngIf="email.touched && email.invalid">
+                <p class="text-danger" *ngIf="email.errors?.['pattern']"> ex: name@example.com</p>
+                <p class="text-danger" *ngIf="email.errors?.['required']"> email is required</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input required minlength="8" type="password" class="form-control"
+                [ngClass]="password.touched && password.invalid?'is-invalid':(password.valid?'is-valid':'form-control')"
+                id="password" name="password" ngModel #password="ngModel" />
+            <div id="passwordHelpBlock" class="form-text" *ngIf="password.touched && password.invalid">
+                <p class="text-danger" *ngIf="password.errors?.['minlength']"> Your password must be at least 8
+                    characters long</p>
+                <p class="text-danger" *ngIf="password.errors?.['required']"> Password is required</p>
+            </div>
+        </div>
+
+        <button type="submit" class="btn active-btn mt-3 mb-3 submit" [disabled]="loginForm.invalid">Log In</button>
+        <p class="or"><span>Don't have an account?</span></p>
+        <a class="btn active-btn btn-dark mt-3 mb-3" routerLink="../sign-up">Sign Up</a>
+    </form>
+</div>

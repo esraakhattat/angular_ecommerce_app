@@ -1,0 +1,26 @@
+.product-name{
+    text-decoration: none;
+    color: black;
+}
+.product-name:hover{
+    color: orange;
+}
+.desc{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.card-img-top{
+    width:60%;
+    height:250px;
+    object-fit: contain;
+    margin: auto;
+}
+.alert{
+    position: fixed;
+    bottom: 0;
+    right:400;
+    z-index: 1000;
+    /* margin: auto; */
+    width:420px;
+}

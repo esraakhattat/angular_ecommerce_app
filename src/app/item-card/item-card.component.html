@@ -1,0 +1,15 @@
+<div class="card m-3">
+    <img [src]="product.image" class="card-img-top" [alt]="product.title">
+    <div class="card-body">
+        <a class="product-name" [routerLink]="['product-details',product.id]"><h2 class="card-title desc">{{product.title}}</h2></a>
+        <p class="card-text desc">{{product.description}}</p>
+        <p class="card-text">{{product.price | currency : 'EGP '}}</p>
+        <a class="btn btn-dark" (click)="addToCart()">Add to cart</a>
+    </div>
+    <div class="card-footer">
+    <small class="text-muted">rate: {{product.rating.rate }} </small>
+    </div>
+</div>
+<div class="alert alert-info" role="alert" *ngIf="showAlert">
+    item added to cart <a routerLink="cart" class="alert-link">Go to cart</a>
+</div>

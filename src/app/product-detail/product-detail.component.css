@@ -1,0 +1,13 @@
+.alert{
+    position: fixed;
+    bottom: 0;
+    right:400;
+    z-index: 1000;
+    /* margin: auto; */
+    width:83%;
+}
+.product-img{
+    height:200px;
+    object-fit: contain;
+    /* margin:auto; */
+}

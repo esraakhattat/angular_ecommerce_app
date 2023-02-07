@@ -1,0 +1,21 @@
+<div class="card m-3">
+    <div class="row g-0">
+        <div class="col-md-3">
+            <img [src]="product.image" class="img-fluid product-img ms-2 mt-5 mb-5" [alt]="product.title">
+        </div>
+        <div class="col-md-9">
+            <div class="card-body">
+                    <p class="card-title h1">{{product.title}}</p>
+                <p class="card-text">{{product.description}}</p>
+                <p class="h6 card-text">{{product.price | currency : 'EGP '}}</p>
+                <small class="h6 d-block mb-3">rate: {{product.rating.rate}} </small>
+                <a (click)="addToCart()" class="btn btn-dark">Add to cart</a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="alert alert-info" role="alert" *ngIf="showAlert">
+    Item added to cart <a routerLink="../../cart" class="alert-link">Go to cart</a>
+</div>
